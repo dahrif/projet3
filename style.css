@@ -1,0 +1,76 @@
+body{
+    background: url(cover.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    
+    
+    
+
+}
+h1{ color: black;
+    text-align: center;
+    font-size: 30px;
+
+
+}
+#result {
+    background-color:mistyrose;
+    float: right;
+    margin-right: 100px;
+    margin-top: 50px;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: large;
+    line-height: 40px;
+    
+    
+}
+#contenu{
+    background-color:mistyrose;
+    float: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 40px;
+
+}
+input{
+    width: 100%;
+    margin: 10px 0px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px gray solid;
+    padding: 10px 6px;
+    font-size:15px ;
+}
+button{
+    width: 80%;
+    border-radius: 20px;
+    padding: 8px ;
+    background-color: grey;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+}
+a{
+    width: 80%;
+    border-radius: 20px;
+    padding: 8px ;
+    background-color: grey;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+    cursor: pointer;
+    
+}
