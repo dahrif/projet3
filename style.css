@@ -2,19 +2,14 @@ body{
     background: url(cover.jpg);
     background-size:cover;
     background-repeat: no-repeat;
-    
-    
-    
-
 }
-h1{ color: black;
+h1{ color: #fff;
     text-align: center;
     font-size: 30px;
 
-
 }
 #result {
-    background-color:mistyrose;
+    background-color:rgba(66, 74, 97, 0.37);
     float: right;
     margin-right: 100px;
     margin-top: 50px;
@@ -25,11 +20,12 @@ h1{ color: black;
     padding: 10px;
     font-size: large;
     line-height: 40px;
+    display: none;
     
     
 }
 #contenu{
-    background-color:mistyrose;
+    background-color:rgba(66, 74, 97, 0.37);
     float: left;
     margin-left: 100px;
     margin-top: 50px;
@@ -51,19 +47,20 @@ input{
     font-size:15px ;
 }
 button{
-    width: 80%;
+    width: 50%;
     border-radius: 20px;
     padding: 8px ;
-    background-color: grey;
+    background-color: #000;
     font-size: 20px;
     font-weight: bold;
     margin-top: 8px;
     cursor: pointer;
     border: none;
     outline: none;
+    color: #fff;
 
 }
-a{
+/* a{
     width: 80%;
     border-radius: 20px;
     padding: 8px ;
@@ -73,4 +70,4 @@ a{
     margin-top: 8px;
     cursor: pointer;
     
-}
+} */
