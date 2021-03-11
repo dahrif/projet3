@@ -10,6 +10,6 @@ function myFunction() {
 
         document.getElementById("result").style.display = 'block';
       
-      document.getElementById("result1").innerHTML = "<br><a id='but' href='javascript:window.print()' style='width: 80%; border-radius: 20px; padding: 10px; background-color: grey; font-size: 20px; font-weight: bold; margin-top: 10px; text-color:black; cursor: pointer; text-decoration: none; color: #000;' >imprimer</a> <br>  ";
+      document.getElementById("result1").innerHTML = "<br><a id='but' href='javascript:window.print()' style='width: 80%; border-radius: 20px; padding: 10px; background-color: #000; font-size: 20px; font-weight: bold; margin-top: 10px; text-color:black; cursor: pointer; text-decoration: none; color: #fff;' >imprimer</a> <br>  ";
 
     }
