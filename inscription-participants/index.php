@@ -17,7 +17,7 @@
         <input name="email" type="email" required><br>
         <label for="" >Telephone</label>
         <input name="telephone" type="text"required><br>
-        <button type="submit">Enregistrer</button>
+        <button type="submit" name="valider">Enregistrer</button>
     </form>
 </body>
 </html>
