@@ -1,116 +1,117 @@
 <?php
- // Traitement
+//initialisation du session
+session_start();
 
- // Initialisation du session
- session_start();
+//initialisation de tableau des participants
+// $list_participants2=[];
 
- // Initialisation du tableau des participants
- $nom = [];
- $prenom = [];
- $email = [];
- $telephone = [];
- $liste_participants = [];
-
-
-// Trouver ou créer le tableau dans Session
-  if( isset( $_SESSION['nom'] ) ) {
-    $nom =  $_SESSION['nom'] ;
- }else {
-    $_SESSION['nom'] =  $nom;
+ // Trouver ou créer le tableau dans Session
+ //nom
+ if( isset( $_SESSION['liste_nomS'] ) ) {
+    $liste_nom =  $_SESSION['liste_nomS'] ;
+ }elseif(isset($liste_nom)) {
+   $_SESSION['liste_nomS'] =  $liste_nom;
+ }
+//prenom
+if( isset( $_SESSION['liste_prenomS'] ) ) {
+    $liste_prenom =  $_SESSION['liste_prenomS'] ;
+ }elseif(isset($liste_prenom)) {
+   $_SESSION['liste_prenomS'] =  $liste_prenom;
  }
 
- if( isset( $_SESSION['prenom'] ) ) {
-    $prenom =  $_SESSION['prenom'] ;
- }else {
-    $_SESSION['prenom'] =  $prenom;
+
+ //Email
+if( isset( $_SESSION['liste_emailS'] ) ) {
+   $liste_email =  $_SESSION['liste_emailS'] ;
+}elseif(isset($liste_email)) {
+  $_SESSION['liste_emailS'] =  $liste_email;
+}
+
+  //Telephone
+if( isset( $_SESSION['liste_teleS'] ) ) {
+    $liste_tele =  $_SESSION['liste_teleS'] ;
+ }elseif(isset($liste_tele)) {
+   $_SESSION['liste_teleS'] =  $liste_tele;
  }
 
-if( isset( $_SESSION['email'] ) ) {
-    $email =  $_SESSION['email'] ;
- }else {
-    $_SESSION['email'] =  $email;
- }
 
- if( isset( $_SESSION['telephone'] ) ) {
-    $numero =  $_SESSION['telephone'] ;
- }else {
-    $_SESSION['telephone'] =  $telephone;
- }
+  // Ajouter le nom et email dans le tableau
+  if (isset($_POST["nom"])||isset($_POST["prenom"])||isset($_POST["tele"])||isset($_POST["email"])) {
+    $liste_nom[] = $_POST["nom"];
+    $liste_prenom[] = $_POST["prenom"];
+    $liste_email[] = $_POST["email"];
+    $liste_tele[] = $_POST["tele"];
 
- // Ajouter le nom du nom dans le tableau
- $nom = $_POST["nom"] ;
- $prenom = $_POST["prenom"] ;
- $email = $_POST["email"] ;
- $telephone = $_POST["telephone"] ;
+  }
 
 
- // Enregistrer le tableau dans la session
- $_SESSION['nom'] =  $nom;
- $_SESSION['prenom'] =  $prenom;
- $_SESSION['email'] =  $email;
- $_SESSION['telephone'] =  $telephone;
+  // Enregistrer le tableau dans la session
+  if (isset($liste_nom)&&isset($liste_prenom)&&isset($liste_tele)&&isset($liste_email) ){
+    $_SESSION['liste_nomS'] =  $liste_nom;
+    $_SESSION['liste_prenomS'] =  $liste_prenom;
+    $_SESSION['liste_emailS'] =  $liste_email;
+    $_SESSION['liste_teleS'] =  $liste_tele;
+   
+  }
 
-
- $_SESSION['liste_participants'] =  $liste_participants;
-
- $liste_participants[] = [$_POST["nom"],$_POST["prenom"],$_POST["email"],$_POST["telephone"] ];
 
 
 
 ?>
-
-
-
-<!-- Affichage -->
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" ></script>
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <title>Affichage</title>
+    <link rel='stylesheet' type='text/css' href='style2.css'>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 <body>
-<div class="container-fluid">
-<h1>Liste des participants</h1>
 
-<table class="table align-self-center">
-   
-   <tr>
-       <th>Nom</th>
-       <th>prenom</th>
-       <th>email</th>
-       <th>telephone</th>
-   </tr>
-    <?php
-        foreach ($liste_participants as $value) { 
-        ?>
-       
-        <tr>
-            <?php echo "<td>" .$_POST['nom']. "</td>"?>
-            <?php echo "<td>" .$_POST['prenom']. "</td>"?>
-            <?php echo "<td>" .$_POST['email']. "</td>"?>
-            <?php echo "<td>" .$_POST['telephone']. "</td>"?>
-           
-        </tr>
-  
+<h2>List des participants : </h2>
 
-        <?php
-        }
+<table border="2">
+            <tr>
+                <th>nom</th>
+                <th>prenom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                
+            </tr>
+
+        <?php 
+
+          for ($i=0; $i <sizeof($liste_nom); $i++){     
         
-    ?>
+            echo "<tr style='  background-color: #dddddd;'>";
+            echo "<td>".$liste_nom[$i]."</td>";
+            echo "<td>".$liste_prenom[$i]."</td>";
+            echo "<td>".$liste_email[$i]."</td>";
+            echo "<td>".$liste_tele[$i]."</td>";
+            echo "<tr>";
+
+        }
+      
+
+    ?>  
+
     </table>
+    <div class="btns">
+    <input id="print" type="button" value="Imprimer" onclick="window.print()">
+    <a href="index.php"><input href="" type="button" value="Retour"></a>
+    
+    <input type="button" value="Fermer" onclick="window.close()">
     </div>
     
-
-
-</ul>
 </body>
+
 </html>
+
+<?php
+    
+ ?>
