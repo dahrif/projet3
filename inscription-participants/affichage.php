@@ -69,19 +69,19 @@ if( isset( $_SESSION['email'] ) ) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-table,
-td {
-    border: 1px solid #333;
-}
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" ></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
 
-
-</style>
 </head>
 <body>
+<div class="container-fluid">
 <h1>Liste des participants</h1>
 
-<table>
+<table class="table align-self-center">
    
    <tr>
        <th>Nom</th>
@@ -94,10 +94,11 @@ td {
         ?>
        
         <tr>
-            <td><?php echo $_POST['nom'] ?></td>
-            <td><?php echo $_POST['prenom'] ?></td>
-            <td><?php echo $_POST['email'] ?></td>
-            <td><?php echo $_POST['telephone'] ?></td>
+            <?php echo "<td>" .$_POST['nom']. "</td>"?>
+            <?php echo "<td>" .$_POST['prenom']. "</td>"?>
+            <?php echo "<td>" .$_POST['email']. "</td>"?>
+            <?php echo "<td>" .$_POST['telephone']. "</td>"?>
+           
         </tr>
   
 
@@ -106,7 +107,7 @@ td {
         
     ?>
     </table>
-    
+    </div>
     
 
 
