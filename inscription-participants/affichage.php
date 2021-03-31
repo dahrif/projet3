@@ -55,8 +55,6 @@ if( isset( $_SESSION['liste_teleS'] ) ) {
   }
 
 
-
-
 ?>
 <!doctype html>
 <html>
@@ -65,30 +63,34 @@ if( isset( $_SESSION['liste_teleS'] ) ) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affichage</title>
-    <link rel='stylesheet' type='text/css' href='style2.css'>
+    <link rel='stylesheet' href='style2.css'>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 <body>
+<div class="container">
 
 <h2>List des participants : </h2>
 
-<table border="2">
+<table class="table table-bordered table-fluid">
+<thead>
             <tr>
-                <th>nom</th>
-                <th>prenom</th>
+                <th>Nom</th>
+                <th>Prénom</th>
                 <th>Email</th>
                 <th>Téléphone</th>
                 
             </tr>
+            </thead>
+            <tbody>
 
         <?php 
 
           for ($i=0; $i <sizeof($liste_nom); $i++){     
         
-            echo "<tr style='  background-color: #dddddd;'>";
+            echo "<tr>";
             echo "<td>".$liste_nom[$i]."</td>";
             echo "<td>".$liste_prenom[$i]."</td>";
             echo "<td>".$liste_email[$i]."</td>";
@@ -99,15 +101,14 @@ if( isset( $_SESSION['liste_teleS'] ) ) {
       
 
     ?>  
-
+<tbody>
     </table>
-    <div class="btns">
-    <input id="print" type="button" value="Imprimer" onclick="window.print()">
-    <a href="index.php"><input href="" type="button" value="Retour"></a>
-    
-    <input type="button" value="Fermer" onclick="window.close()">
-    </div>
-    
+    <button type="button" class="btn btn-primary" onclick="window.print()">Imprimer</button>
+
+    <button type="button" class="btn btn-primary" onclick="window.close()">Fermer</button>
+
+    <button type='submit' class="btn btn-danger" value="Supprimer la session" name="supprimer_sess" onclick="<?php if(isset($_POST['supprimer_sess'])) session_destroy();?>">Supprimer</button>
+
 </body>
 
 </html>
