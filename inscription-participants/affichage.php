@@ -3,7 +3,6 @@
 session_start();
 
 //initialisation de tableau des participants
-// $list_participants2=[];
 
  // Trouver ou créer le tableau dans Session
  //nom
@@ -73,14 +72,12 @@ if( isset( $_SESSION['liste_teleS'] ) ) {
 <body>
   <div class="container">
 
-    <!-- <h2>List des participants</h2> -->
-    <!-- <p>List des participants</p> -->
     <h1>List des participants</h1>
     <h2>List des participants</h2>
 
   <table class="table table-bordered table-fluid">
   <thead>
-    <tr class="hi">
+    <tr>
         <th>Nom</th>
         <th>Prénom</th>
         <th>Email</th>
@@ -112,25 +109,9 @@ if( isset( $_SESSION['liste_teleS'] ) ) {
 
     <button type="button" class="btn btn-primary" onclick="window.close()">Fermer</button>
     </div>
-<!-- 
-    <form method="post" action="suppression.php" id="form">
-       <input type="hidden" id="cache" name="cache"/>
-       </form>
-      <button id="delete"  onclick="delete()">Supprimer</button>
-      <script type="text/javascript">
-      function delete(){
-         document.getElementById('cache').value = 1;
-         document.getElementById('form').submit();
-      }
-      
-    </script> -->
 
 
 
 </body>
 
 </html>
-
-<?php
-    
- ?>
