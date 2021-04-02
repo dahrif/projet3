@@ -64,27 +64,31 @@ if( isset( $_SESSION['liste_teleS'] ) ) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affichage</title>
     <link rel='stylesheet' href='style2.css'>
+    <link rel="stylesheet" href="print.css" media="print">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 <body>
-<div class="container">
+  <div class="container">
 
-<h2>List des participants : </h2>
+    <!-- <h2>List des participants</h2> -->
+    <!-- <p>List des participants</p> -->
+    <h1>List des participants</h1>
+    <h2>List des participants</h2>
 
-<table class="table table-bordered table-fluid">
-<thead>
-            <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Email</th>
-                <th>Téléphone</th>
+  <table class="table table-bordered table-fluid">
+  <thead>
+    <tr class="hi">
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
                 
-            </tr>
-            </thead>
-            <tbody>
+    </tr>
+          </thead>
+          <tbody>
 
         <?php 
 
@@ -97,17 +101,31 @@ if( isset( $_SESSION['liste_teleS'] ) ) {
             echo "<td>".$liste_tele[$i]."</td>";
             echo "<tr>";
 
-        }
+          }
       
 
-    ?>  
-<tbody>
+        ?>  
+    <tbody>
     </table>
+    <div class="boutton">
     <button type="button" class="btn btn-primary" onclick="window.print()">Imprimer</button>
 
     <button type="button" class="btn btn-primary" onclick="window.close()">Fermer</button>
+    </div>
+<!-- 
+    <form method="post" action="suppression.php" id="form">
+       <input type="hidden" id="cache" name="cache"/>
+       </form>
+      <button id="delete"  onclick="delete()">Supprimer</button>
+      <script type="text/javascript">
+      function delete(){
+         document.getElementById('cache').value = 1;
+         document.getElementById('form').submit();
+      }
+      
+    </script> -->
 
-    <button type='submit' class="btn btn-danger" value="Supprimer la session" name="supprimer_sess" onclick="<?php if(isset($_POST['supprimer_sess'])) session_destroy();?>">Supprimer</button>
+
 
 </body>
 
