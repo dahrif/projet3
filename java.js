@@ -13,3 +13,12 @@ function myFunction() {
       document.getElementById("result1").innerHTML = "<br><a id='but' href='javascript:window.print()' style='width: 80%; border-radius: 20px; padding: 10px; background-color: #000; font-size: 20px; font-weight: bold; margin-top: 10px; text-color:white; cursor: pointer; text-decoration: none; color: #fff;' >imprimer</a> <br>  ";
 
     }
+
+
+
+    localStorage.setItem("key", document.getElementById("input1"));
+
+    document.getElementById("result3").innerHTML = localStorage.getItem("key");
+
+
+
