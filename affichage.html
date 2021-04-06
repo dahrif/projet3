@@ -3,22 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta nom="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <div id="result"></div>
+    <div id="results"></div>
 
-    <script>
-    // Check browser support
-    if (typeof(Storage) !== "undefined") {
-      // Store
-      localStorage.setItem("lastname", document.getElementById("input1"));
-      // Retrieve
-      document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-    } else {
-      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-    }
-    </script>
+<script>
+//     window.addEventListener('load', () => { 
+
+// var nom = JSON.parse(localStorage.getItem('nom'));
+// var prenom = JSON.parse(localStorage.getItem('prenom'));
+// var adress = JSON.parse(localStorage.getItem('adresse'));
+// var phone = JSON.parse(localStorage.getItem('telephone'));
+// var email = JSON.parse(localStorage.getItem('email'));
+
+// for(let i=0 ; i< nom.length ; i++ )
+// {document.getElementById('results').innerHTML +="<span>nom :</span>&nbsp;"+ nom [i]+"<br>";
+// document.getElementById('results').innerHTML +="<span>prenom :</span>&nbsp;"+ prenom [i]+"<br>"
+// document.getElementById('results').innerHTML +="<span>Adresse :</span>&nbsp;"+ adress [i]+"<br>"
+// document.getElementById('results').innerHTML +="<span>Telehone :</span>&nbsp;"+ phone [i]+"<br>"
+// document.getElementById('results').innerHTML +="<span>Email :</span>&nbsp;"+ email [i]+"<br><br><br>"
+
+
+
+// }
+
+
+
+// })
+
+
+
+
+JSON.parse(localStorage.getItem('data')).forEach(element => {
+  document.getElementById('results').innerHTML = element.nom
+})
+</script>
 </body>
 </html>
