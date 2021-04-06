@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Roboto+Condensed+family=Lexend&display=swap');
+
 body{
     background: url(cover.jpg);
     background-size:cover;
     background-repeat: no-repeat;
 }
-h1{ color: #fff;
+h1{ 
     text-align: center;
     font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+
 
 }
 #result {
@@ -47,27 +51,44 @@ input{
     font-size:15px ;
 }
 button{
-    width: 50%;
+    margin: 5% 50% 0 50%;
     border-radius: 20px;
-    padding: 8px ;
-    background-color: #000;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 8px;
+    padding: 16px 30px ;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
     border: none;
     outline: none;
-    color: #fff;
+    color: rgb(41, 62, 92);
+    display: block;
+    border: solid 1px rgb(41, 62, 92);
+    line-height: 1;
+    transition: all 0.3s linear;
+    font-family: 'Lexend', sans-serif;
+    text-transform: uppercase;
+    display: inline;
+    width: 120px;
+    float: left;
+
 
 }
-/* a{
-    width: 80%;
-    border-radius: 20px;
-    padding: 8px ;
-    background-color: grey;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 8px;
-    cursor: pointer;
-    
-} */
+
+button:hover,
+button:focus{
+    background: rgb(41, 62, 92);
+    color: #fff;
+}
+
+button,a{
+    text-decoration: none;
+    color: rgb(41, 62, 92);
+}
+ .but{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+ }

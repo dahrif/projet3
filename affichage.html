@@ -5,40 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta nom="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="affichage.css">
+    <script src="affichage.js"></script>
+   
 </head>
 <body>
-    <div id="results"></div>
+  <div class="content">
+  <h1>Liste des participants</h1>
 
-<script>
-//     window.addEventListener('load', () => { 
+  <table >
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Préom</th>
+      <th>Adresse</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody  id='mytable' class="table"> 
+  </tbody>
+  </table>
 
-// var nom = JSON.parse(localStorage.getItem('nom'));
-// var prenom = JSON.parse(localStorage.getItem('prenom'));
-// var adress = JSON.parse(localStorage.getItem('adresse'));
-// var phone = JSON.parse(localStorage.getItem('telephone'));
-// var email = JSON.parse(localStorage.getItem('email'));
-
-// for(let i=0 ; i< nom.length ; i++ )
-// {document.getElementById('results').innerHTML +="<span>nom :</span>&nbsp;"+ nom [i]+"<br>";
-// document.getElementById('results').innerHTML +="<span>prenom :</span>&nbsp;"+ prenom [i]+"<br>"
-// document.getElementById('results').innerHTML +="<span>Adresse :</span>&nbsp;"+ adress [i]+"<br>"
-// document.getElementById('results').innerHTML +="<span>Telehone :</span>&nbsp;"+ phone [i]+"<br>"
-// document.getElementById('results').innerHTML +="<span>Email :</span>&nbsp;"+ email [i]+"<br><br><br>"
-
-
-
-// }
-
-
-
-// })
+<div class="but">
+     <button type="button" class="btn" onclick="window.print()">imprimer</button>
+    </div>
+ 
+</div>
 
 
 
-
-JSON.parse(localStorage.getItem('data')).forEach(element => {
-  document.getElementById('results').innerHTML = element.nom
-})
-</script>
 </body>
 </html>
