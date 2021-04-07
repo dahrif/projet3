@@ -9,8 +9,11 @@ h1{
     text-align: center;
     font-size: 30px;
     font-family: 'Roboto Condensed', sans-serif;
+    
 
-
+}
+form{
+    position: relative;
 }
 #result {
     background-color:rgba(66, 74, 97, 0.37);
@@ -33,7 +36,7 @@ h1{
     float: left;
     margin-left: 100px;
     margin-top: 50px;
-    width: 500px;
+    width: 400px;
     border-radius: 20px;
     text-align: center;
     box-sizing: border-box;
@@ -51,25 +54,21 @@ input{
     font-size:15px ;
 }
 button{
-    margin: 5% 50% 0 50%;
     border-radius: 20px;
-    padding: 16px 30px ;
+    padding: 16px 30px;
     background: #fff;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    border: none;
-    outline: none;
-    color: rgb(41, 62, 92);
-    display: block;
     border: solid 1px rgb(41, 62, 92);
     line-height: 1;
     transition: all 0.3s linear;
     font-family: 'Lexend', sans-serif;
     text-transform: uppercase;
-    display: inline;
     width: 120px;
-    float: left;
+    text-decoration: none;
+    color: rgb(41, 62, 92);
+    MARGIN-RIGHT: 15px;
 
 
 }
@@ -85,10 +84,11 @@ button,a{
     color: rgb(41, 62, 92);
 }
  .but{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    text-align: center;
+    DISPLAY: flex;
+ }
+
+ .fbtn{
+     display: flex;
+     flex-direction: column;
  }
