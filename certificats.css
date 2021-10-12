@@ -45,16 +45,21 @@ body {
     font-style: italic;
     padding-top:15px ;
     margin: auto;
+    padding-top: 50px;
     width: 400px;
     font-family: 'Tangerine', cursive;
     text-transform: capitalize;
    }
    
 .reason {
-    margin: 10px;
+
+    margin: 80px;
 }
 
 .stamp{
+    position: absolute;
+    top: 70%;
+    left: 40%;
     width: 220px;
     height: 200px;
     padding-bottom: 100px;
